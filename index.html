@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Page Title</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+  <script src='main.js'></script>
+  <script>
+    // //如果是移动端就跳转到别的页面
+    // if (/(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent)) {
+    //   location.href = 'https://qm0.website/myhtml/index1.htm'
+    // }
+    //如果是移动端就调整像素使网页通用
+    if (/(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent)) {
+      let w = document.documentElement.clientWidth
+      let h = document.documentElement.clientHeight
+      let html = document.querySelector('html')
+      html.style.fontSize = w / 10 + 'px'
+      html.style.height = h + 'px'
+      html.style.width = w + 'px'
+    }
+  </script>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    .title {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .get {
+      width: 300px;
+      height: 300px;
+      margin: auto;
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .get input {
+      width: 200px;
+      height: 25px;
+      margin-top: 10px;
+    }
+
+    .get select {
+      width: 200px;
+      height: 25px;
+      margin-top: 10px;
+    }
+
+    .get button {
+      width: 100px;
+      height: 30px;
+      margin-top: 10px;
+      background-color: #888;
+      border: 1px solid #888;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .num {
+      position: relative;
+      width: 95%;
+      top: 10px;
+      margin-top: 20px;
+      text-align: right;
+      color: #888;
+      font-size: small;
+    }
+
+    .num .i {
+      color: red;
+    }
+
+    table {
+      width: 90%;
+      margin: auto;
+      margin-top: 20px;
+      border-collapse: collapse;
+      text-align: center;
+    }
+
+    table th {
+      background-color: #888;
+      color: white;
+      padding: 5px;
+      border: 1px solid #888;
+    }
+
+    table td {
+      padding: 5px;
+      border: 1px solid #888;
+    }
+
+    table td a {
+      color: black;
+      text-decoration: none;
+    }
+
+    table td a:hover {
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 class="title">学生信息</h1>
+  <form action="#/add" class="get">
+    <label for="name">姓名 </label>
+    <input type="text" name="name" id="name" placeholder="请输入姓名" /><br />
+    <label for="age">年龄 </label>
+    <input type="text" name="age" id="age" placeholder="请输入年龄" /><br />
+    <!--专业-->
+    <label for="major">专业 </label>
+    <select name="major" id="major">
+      <option value="计算机">计算机</option>
+      <option value="数学">数学</option>
+      <option value="英语">英语</option>
+      <option value="物理">物理</option>
+    </select><br />
+    <!--性别-->
+    <label for="sex">性别</label>
+    <select name="sex" id="sex">
+      <option value="男">男</option>
+      <option value="女">女</option>
+    </select><br />
+    <!--所来自的中国城市-->
+    <label for="city">城市</label>
+    <select name="city" id="city">
+      <!--一一列举所有中国城市-->
+      <option value="北京">北京</option>
+      <option value="上海">上海</option>
+      <option value="广州">广州</option>
+      <option value="深圳">深圳</option>
+      <option value="杭州">杭州</option>
+      <option value="南京">南京</option>
+      <option value="武汉">武汉</option>
+      <option value="成都">成都</option>
+      <option value="西安">西安</option>
+      <option value="重庆">重庆</option>
+      <option value="天津">天津</option>
+      <option value="郑州">郑州</option>
+      <option value="长沙">长沙</option>
+      <option value="青岛">青岛</option>
+      <option value="大连">大连</option>
+      <option value="厦门">厦门</option>
+      <option value="苏州">苏州</option>
+      <option value="宁波">宁波</option>
+      <option value="无锡">无锡</option>
+      <option value="合肥">合肥</option>
+      <option value="福州">福州</option>
+      <option value="济南">济南</option>
+      <option value="哈尔滨">哈尔滨</option>
+      <option value="佛山">佛山</option>
+      <option value="东莞">东莞</option>
+      <option value="温州">温州</option>
+      <option value="石家庄">石家庄</option>
+      <option value="南昌">南昌</option>
+      <option value="贵阳">贵阳</option>
+      <option value="太原">太原</option>
+      <option value="南宁">南宁</option>
+      <option value="昆明">昆明</option>
+      <option value="烟台">烟台</option>
+      <option value="兰州">兰州</option>
+      <option value="泉州">泉州</option>
+      <option value="南通">南通</option>
+      <option value="金华">金华</option>
+      <option value="徐州">徐州</option>
+      <option value="珠海">珠海</option>
+      <option value="海口">海口</option>
+      <option value="乌鲁木齐">乌鲁木齐</option>
+      <option value="绍兴">绍兴</option>
+      <option value="中山">中山</option>
+      <option value="台州">台州</option>
+      <option value="克拉玛依">克拉玛依</option>
+      <option value="保定">保定</option>
+      <option value="潍坊">潍坊</option>
+      <option value="太仓">太仓</option>
+      <option value="镇江">镇江</option>
+      <option value="桂林">桂林</option>
+      <option value="唐山">唐山</option>
+      <option value="邯郸">邯郸</option>
+      <option value="嘉兴">嘉兴</option>
+      <option value="泰州">泰州</option>
+      <option value="扬州">扬州</option>
+      <option value="洛阳">洛阳</option>
+      <option value="惠州">惠州</option>
+      <option value="江门">江门</option>
+      <option value="汕头">汕头</option>
+      <option value="济宁">济宁</option>
+      <option value="盐城">盐城</option>
+      <option value="泰安">泰安</option>
+      <option value="包头">包头</option>
+      <option value="威海">威海</option>
+      <option value="柳州">柳州</option>
+      <option value="宜昌">宜昌</option>
+      <option value="淄博">淄博</option>
+      <option value="绵阳">绵阳</option>
+      <option value="廊坊">廊坊</option>
+      <option value="漳州">漳州</option>
+      <option value="襄阳">襄阳</option>
+      <option value="湛江">湛江</option>
+      <option value="鞍山">鞍山</option>
+      <option value="江阴">江阴</option>
+      <option value="蚌埠">蚌埠</option>
+      <option value="芜湖">芜湖</option>
+      <option value="荆州">荆州</option>
+      <option value="银川">银川</option>
+      <option value="西宁">西宁</option>
+      <option value="大庆">大庆</option>
+      <option value="连云港">连云港</option>
+      <option value="宁德">宁德</option>
+      <option value="湖州">湖州</option>
+      <option value="赣州">赣州</option>
+      <option value="梅州">梅州</option>
+      <option value="沧州">沧州</option>
+      <option value="临沂">临沂</option>
+      <option value="宝鸡">宝鸡</option>
+      <option value="秦皇岛">秦皇岛</option>
+      <option value="衡阳">衡阳</option>
+      <option value="邢台">邢台</option>
+      <option value="岳阳">岳阳</option>
+      <option value="呼和浩特">呼和浩特</option>
+      <option value="九江">九江</option>
+      <option value="淮安">淮安</option>
+      <option value="泰兴">泰兴</option>
+      <option value="宿迁">宿迁</option>
+      <option value="黄山">黄山</option>
+      <option value="宜宾">宜宾</option>
+      <option value="马鞍山">马鞍山</option>
+      <option value="南充">南充</option>
+      <option value="吉林">吉林</option>
+      <option value="丹东">丹东</option>
+      <option value="营口">营口</option>
+      <option value="抚顺">抚顺</option>
+      <option value="潮州">潮州</option>
+      <option value="德阳">德阳</option>
+      <option value="宜春">宜春</option>
+      <option value="咸阳">咸阳</option>
+      <option value="盘锦">盘锦</option>
+      <option value="淮南">淮南</option>
+      <option value="黄石">黄石</option>
+      <option value="鄂尔多斯">鄂尔多斯</option>
+      <option value="锦州">锦州</option>
+      <option value="萍乡">萍乡</option>
+      <option value="宜兴">宜兴</option>
+      <option value="吉安">吉安</option>
+      <option value="张家港">张家港</option>
+      <option value="三亚">三亚</option>
+      <option value="龙岩">龙岩</option>
+      <option value="肇庆">肇庆</option>
+      <option value="新乡">新乡</option>
+      <option value="安庆">安庆</option>
+      <option value="咸宁">咸宁</option>
+      <option value="丽水">丽水</option>
+      <option value="滁州">滁州</option>
+      <option value="宿州">宿州</option>
+      <option value="乐山">乐山</option>
+      <option value="黄冈">黄冈</option>
+      <option value="齐齐哈尔">齐齐哈尔</option>
+      <option value="延边">延边</option>
+      <option value="汕尾">汕尾</option>
+      <option value="梧州">梧州</option>
+      <option value="丽江">丽江</option>
+      <option value="韶关">韶关</option>
+      <option value="榆林">榆林</option>
+      <option value="宜兰">宜兰</option>
+      <option value="花莲">花莲</option>
+      <option value="台东">台东</option>
+      <option value="台南">台南</option>
+      <option value="台中">台中</option>
+      <option value="高雄">高雄</option>
+      <option value="基隆">基隆</option>
+      <option value="嘉义">嘉义</option>
+      <option value="台北">台北</option>
+      <option value="新北">新北</option>
+      <option value="桃园">桃园</option>
+      <option value="新竹">新竹</option>
+      <option value="苗栗">苗栗</option>
+      <option value="彰化">彰化</option>
+      <option value="南投">南投</option>
+      <option value="云林">云林</option>
+      <option value="屏东">屏东</option>
+      <option value="嘉义">嘉义</option>
+      <select><br />
+        <button>提交</button>
+  </form>
+  <p class="num">共
+    <strong class="i">0</strong> 条数据
+  </p>
+  <table>
+    <thead>
+      <tr>
+        <th>次序</th>
+        <th>姓名</th>
+        <th>年龄</th>
+        <th>专业</th>
+        <th>性别</th>
+        <th>城市</th>
+        <th>登记时间</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+    <script>
+      let data = null
+      render()
+      //{ stuid: 1, name: "张三", age: 18, major: "计算机", sex: "男", city: "北京", time: "2020-02-02 12:12:12" }
+      function sort() {
+        if (!localStorage.getItem('data')) {//重要！！！
+          localStorage.setItem('data', JSON.stringify([]))
+        }
+        data = JSON.parse(localStorage.getItem('data'))
+        for (let i = 0; i < data.length; i++) {
+          data[i].stuID = i + 1
+        }
+      }
+      function render() {
+        sort()
+        const arr = data.map(function (ele) {
+          return `
+          <tr>
+            <td data-id="order">${ele.stuID}</td>
+            <td data-id="name">${ele.name}</td>
+            <td data-id="age">${ele.age}</td>
+            <td data-id="major">${ele.major}</td>
+            <td data-id="sex">${ele.sex}</td>
+            <td data-id="city">${ele.city}</td>
+            <td data-id="time">${ele.time}</td>
+            <td data-id="operation">
+              <a href="#" data-id="${ele.stuID}">删除</a>
+            </td>
+          </tr>
+        `
+        })
+        document.querySelector('tbody').innerHTML = arr.join('')
+        const strong = document.querySelector('.num strong')
+        strong.innerHTML = data.length
+      }
+
+      const btn = document.querySelector('.get button')
+      btn.addEventListener('click', function (e) {
+        e.preventDefault()//阻止默认行为
+        //输入的信息必须全部填写
+        let Oname = document.querySelector('#name')
+        let Oage = document.querySelector('#age')
+        if (!Oname.value || !Oage.value) {
+          alert('请填写完整信息')
+          return
+        }
+        //获取信息
+        data.push({
+          stuID: data.length + 1,
+          name: Oname.value,
+          age: Oage.value,
+          major: document.querySelector('#major').value,
+          sex: document.querySelector('#sex').value,
+          city: document.querySelector('#city').value,
+          time: new Date().toLocaleString()
+        })
+        document.querySelector('.get').reset()
+        localStorage.setItem('data', JSON.stringify(data))
+        render()
+      })
+
+      const tbody = document.querySelector('tbody')
+      tbody.addEventListener('click', function (e) {
+        if (e.target.nodeName === 'A') {
+          const id = e.target.dataset.id
+          data = data.filter(function (ele) {
+            return ele.stuID != id
+          })
+          localStorage.setItem('data', JSON.stringify(data))
+          render()
+        }
+      })
+    </script>
+</body>
+
+</html>
